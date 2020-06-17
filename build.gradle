@@ -1,0 +1,49 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+
+    ext {
+        androidx_appcompat_version = '1.1.0'
+        androidx_constraintlayout_version = '1.1.3'
+        dagger_version = '2.28'
+        moxy_version = '2.1.2'
+        retrofit_version = '2.9.0'
+        retorfit_converter_gson_version = '2.9.0'
+        okhttp3_logging_interceptor_version = '4.7.2'
+        rxjava_retrofit_adapter = '3.0.0'
+        rxjava_version = '3.0.4'
+        rxandroid_version = '3.0.0'
+        recyclerview_version = '1.1.0'
+        navigation_fragment_version = '2.2.2'
+        navigation_ui_version = '2.2.2'
+        multidex_version = '1.0.3'
+        junit_version = '4.13'
+        androidx_test_version = '1.1.1'
+        androidx_test_espresso_version = '3.2.0'
+        glide_verison = '4.11.0'
+        dexter_version = '6.2.0'
+    }
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.0.0"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.2.2"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://oss.jfrog.org/libs-snapshot" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
