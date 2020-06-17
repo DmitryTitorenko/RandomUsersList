@@ -4,11 +4,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.bumptech.glide.Glide;
 import com.example.randomusers.R;
 import com.example.randomusers.injection.Description;
 import com.example.randomusers.view.base.BaseFragment;
@@ -26,6 +28,7 @@ public class UserDescriptionFragment extends BaseFragment implements IUserDescri
     TextView tvPhone;
     TextView tvName;
     TextView tvEmail;
+    ImageView ivUserImageDescription;
 
     @InjectPresenter
     UserDescriptionPresenter presenter;
@@ -47,6 +50,7 @@ public class UserDescriptionFragment extends BaseFragment implements IUserDescri
         tvPhone = view.findViewById(R.id.tvPhone);
         tvName = view.findViewById(R.id.tvName);
         tvEmail = view.findViewById(R.id.tvEmail);
+        ivUserImageDescription = view.findViewById(R.id.ivUserImageDescription);
         return view;
     }
 
@@ -62,5 +66,10 @@ public class UserDescriptionFragment extends BaseFragment implements IUserDescri
         tvPhone.setText(phone);
         tvName.setText(name);
         tvEmail.setText(email);
+
+        Glide.with(getContext())
+                .load(description.getImage())
+                .into(ivUserImageDescription)
+                .waitForLayout();
     }
 }

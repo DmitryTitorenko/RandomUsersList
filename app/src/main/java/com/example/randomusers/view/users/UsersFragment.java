@@ -64,6 +64,7 @@ public class UsersFragment extends BaseFragment implements IUsersView {
             description.setPhone(item.getPhone());
             description.setName(item.getName());
             description.setEmail(item.getEmail());
+            description.setImage(item.getPicture().getLarge());
             NavHostFragment.findNavController(UsersFragment.this).navigate(R.id.action_usersFragment_to_userDescriptionFragment);
         };
 
